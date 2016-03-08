@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  username: MyString
+  password_digest: MyString
+  email: MyString
+  dob: 2016-03-07
+  married: false
+  income: 1
+  spouse_first_name: MyString
+  spouse_last_name: MyString
+  spouse_income: 1
+  other_income: 1
+
+two:
+  first_name: MyString
+  last_name: MyString
+  username: MyString
+  password_digest: MyString
+  email: MyString
+  dob: 2016-03-07
+  married: false
+  income: 1
+  spouse_first_name: MyString
+  spouse_last_name: MyString
+  spouse_income: 1
+  other_income: 1
