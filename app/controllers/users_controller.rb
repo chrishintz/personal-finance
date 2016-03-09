@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.new
     render_wizard
   end
 end
