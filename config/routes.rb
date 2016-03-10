@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get "/", to: "users#index"
+  get "/", to: "users#index", as: :home
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

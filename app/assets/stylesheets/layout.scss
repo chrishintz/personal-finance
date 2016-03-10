@@ -1,6 +1,55 @@
 body {
   margin: 0;
 }
-.question-text {
 
+.container {
+  @include outer-container(960px);
+}
+
+.question-text {
+  float: none;
+  font-size: 2em;
+  color: #BCBCBC;
+}
+
+.input-label {
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  line-height: 42px;
+  clear: both;
+  float: left;
+  display: block;
+  padding-right: 40px;
+  margin-bottom: 0;
+}
+
+.input-response {
+  display:block;
+  overflow: hidden;
+}
+
+.navigation-buttons {
+  height: 50px;
+}
+
+.continue-button {
+  float: right;
+  height: 100%;
+  input {
+    height: 100%;
+    vertical-align:middle;
+  }
+}
+
+.back-button {
+  float: left;
+  height: 100%;
+  a {
+    color: white;
+  }
+}
+
+.question-block {
+  display: inline-block;
+  min-width: 500px;
 }

@@ -1,42 +1,46 @@
-<h2 class="question-text">First Things First, Let's Get You An Account So You Don't Have To Re-Enter Any Information Next Time!</h1>
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div class="error_messages">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<div class="container">
+  <h2 class="question-text">First Things First, Let's Get You An Account So You Don't Have To Re-Enter Any Information Next Time!</h1>
+  <%= form_for @user do |f| %>
+    <% if @user.errors.any? %>
+      <div class="error_messages">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+        <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="question-block">
+      <div>
+        <label class="input-label"><%= f.label :first_name, "First Name:" %></label>
+        <span class="input-response"><%= f.text_field :first_name %></span>
+      </div>
+      <div>
+        <label class="input-label"><%= f.label :last_name, "Last Name:" %></label>
+        <span class="input-response"><%= f.text_field :last_name %></span>
+      </div>
+      <div>
+        <label class="input-label"><%= f.label :email, "E-mail Address:" %></label>
+        <span class="input-response"><%= f.text_field :email %></span>
+      </div>
+      <div>
+        <label class="input-label"><%= f.label :username, "Username:" %></label>
+        <span class="input-response"><%= f.text_field :username %></span>
+      </div>
+      <div>
+        <label class="input-label"><%= f.label :password, "Password:" %></label>
+        <span class="input-response"><%= f.password_field :password %></span>
+      </div>
+      <div>
+        <label class="input-label"><%= f.label :password_confirmation, "Confirm Password:" %></label>
+        <span class="input-response"><%= f.password_field :password_confirmation %></span>
+      </div>
+
+      <div class="navigation-buttons">
+        <input type="button" class="back-button" value="Back" onclick="history.back(-1)"></input>
+        <%= f.submit "Sign Up", class: "continue-button" %>
+      </div>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign Up" %>
-  </div>
-<% end %>
+</div>
