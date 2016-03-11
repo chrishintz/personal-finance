@@ -6,6 +6,11 @@ body {
   @include outer-container(960px);
 }
 
+.question-block {
+  display: inline-block;
+  min-width: 500px;
+}
+
 .question-text {
   float: none;
   font-size: 2em;
@@ -13,8 +18,7 @@ body {
 }
 
 .input-label {
-  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 100;
+  font-family: $font-stack-helvetica;
   line-height: 42px;
   clear: both;
   float: left;
@@ -29,16 +33,12 @@ body {
 }
 
 .navigation-buttons {
-  height: 50px;
+  height: 36px;
 }
 
 .continue-button {
   float: right;
   height: 100%;
-  input {
-    height: 100%;
-    vertical-align:middle;
-  }
 }
 
 .back-button {
@@ -47,9 +47,4 @@ body {
   a {
     color: white;
   }
-}
-
-.question-block {
-  display: inline-block;
-  min-width: 500px;
 }
