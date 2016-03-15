@@ -1,1 +1,27 @@
-<h1>Spouse</h1>
+<div class="container">
+  <h2 class="question-text">You're Married?  That's Great! Let's Find Out Some Information About Your Spouse!</h1>
+  <%= render :layout => 'form' do |f| %>
+    <div class="question-block">
+      <div>
+        <label class="input-label"><%= f.label :spouse_first_name, "What is Your Spouse's First Name?:" %></label>
+        <div class="dob"><%= f.text_field :spouse_first_name %></div>
+      </div>
+      <div class="form-block">
+        <label class="input-label"><%= f.label :spouse_last_name, "What About Your Spouse's Last Name?:" %></label>
+        <%= f.text_field :spouse_last_name %>
+      </div>
+      <div>
+        <label class="input-label"><%= f.label :spouse_dob, "When was your spouse born?:" %></label>
+        <div class="dob"><%= f.date_select :spouse_dob, order: [:month, :day, :year], start_year: 1919, end_year: Date.today.year %></div>
+      </div>
+      <div>
+        <label class="input-label"><%= f.label :spouse_income, "What is your spouse's current annual income?:" %></label>
+        <span class="input-response"><%= f.text_field :spouse_income %></span>
+      </div>
+      <div class="navigation-buttons">
+        <input type="button" class="back-button" value="Back" onclick="history.back(-1)"></input>
+        <%= f.submit "Continue", class: "continue-button" %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -11,10 +11,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.new(user_params)
-    session[:user_id] = @user.id
-    render_wizard @user
-    #   flash.now.alert = "Username or Email is already taken"  
+    # case signup
+      @user = User.new(user_params)
+      session[:user_id] = @user.id
+      render_wizard @user
+    #   flash.now.alert = "Username or Email is already taken"
   end
 
   private

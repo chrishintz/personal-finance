@@ -1,2 +1,23 @@
-<h1>Biographical</h1>
-<button class="delete-button">BUTTON</button>
+<div class="container">
+  <h2 class="question-text">Next, Let's Find Out A Little More About You To Help Us Build The Perfect Financial Plan For You!</h1>
+  <%= render :layout => 'form' do |f| %>
+    <div class="question-block">
+      <div>
+        <label class="input-label"><%= f.label :dob, "Date of Birth:" %></label>
+        <div class="dob"><%= f.date_select :dob, order: [:month, :day, :year], start_year: 1919, end_year: Date.today.year %></div>
+      </div>
+      <div class="form-block">
+        <label class="input-label"><%= f.label :married, "What is your maritial status?:" %></label>
+        <%= f.select :married, [["Married", true], ["Single", false]], { include_blank: true } %>
+      </div>
+      <div>
+        <label class="input-label"><%= f.label :income, "What is your current annual income?:" %></label>
+        <span class="input-response"><%= f.text_field :income %></span>
+      </div>
+      <div class="navigation-buttons">
+        <input type="button" class="back-button" value="Back" onclick="history.back(-1)"></input>
+        <%= f.submit "Continue", class: "continue-button" %>
+      </div>
+    </div>
+  <% end %>
+</div>

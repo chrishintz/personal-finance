@@ -1,17 +1,6 @@
-<!-- <%= step %> -->
 <div class="container">
   <h2 class="question-text">First Things First, Let's Get You An Account So You Don't Have To Re-Enter Any Information Next Time!</h1>
-  <%= form_for @user, url: wizard_path, method: :put do |f| %>
-    <% if @user.errors.any? %>
-      <div class="error_messages">
-        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-        <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
+  <%= render :layout => 'form' do |f| %>
     <div class="question-block">
       <div>
         <label class="input-label"><%= f.label :first_name, "First Name:" %></label>
@@ -37,7 +26,6 @@
         <label class="input-label"><%= f.label :password_confirmation, "Confirm Password:" %></label>
         <span class="input-response"><%= f.password_field :password_confirmation %></span>
       </div>
-
       <div class="navigation-buttons">
         <input type="button" class="back-button" value="Back" onclick="history.back(-1)"></input>
         <%= f.submit "Sign Up", class: "continue-button" %>
