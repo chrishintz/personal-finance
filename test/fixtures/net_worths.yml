@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  checking_account: 1
+  savings_account: 1
+  four_o_one_k: 1
+  roth_ira: 1
+  other_iras: 1
+  five_twenty_nine: 1
+  stocks: 1
+  bonds: 1
+  other_investments: 1
+  pension: 1
+  primary_residence: 1
+  other_real_estate: 1
+  car: 1
+  life_insurance: 1
+  other_assets: 1
+  real_estate_mortgages: 1
+  student_loans: 1
+  car_loans: 1
+  credit_card_debt: 1
+  consumer_loans: 1
+  unpaid_taxes: 1
+  money_owned_to_others: 1
+  other_liabilities: 1
+
+two:
+  checking_account: 1
+  savings_account: 1
+  four_o_one_k: 1
+  roth_ira: 1
+  other_iras: 1
+  five_twenty_nine: 1
+  stocks: 1
+  bonds: 1
+  other_investments: 1
+  pension: 1
+  primary_residence: 1
+  other_real_estate: 1
+  car: 1
+  life_insurance: 1
+  other_assets: 1
+  real_estate_mortgages: 1
+  student_loans: 1
+  car_loans: 1
+  credit_card_debt: 1
+  consumer_loans: 1
+  unpaid_taxes: 1
+  money_owned_to_others: 1
+  other_liabilities: 1
