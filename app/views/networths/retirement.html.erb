@@ -1,0 +1,29 @@
+<div class="container">
+  <h2 class="question-text">Looking Down The Financial Road, What Do Your Retirement Account Balances Look Like?</h1>
+  <%= render :layout => 'form' do |f| %>
+    <div class="question-block">
+      <div>
+        <label class="input-label"><%= f.label :four_o_one_k, "401(k) and/or 403(b):" %></label>
+        <div><%= f.text_field :four_o_one_k %></div>
+      </div>
+      <div class="form-block">
+        <label class="input-label"><%= f.label :roth_ira, "Roth IRA:" %></label>
+        <%= f.text_field :roth_ira %>
+      </div>
+      <div class="form-block">
+        <label class="input-label"><%= f.label :pension, "Pension:" %></label>
+        <label class="fyi-info">(Enter current monthly benefit * 240)</label>
+        <%= f.text_field :pension %>
+      </div>
+      <div class="form-block">
+        <label class="input-label"><%= f.label :other_iras, "Any Other Retirement Accounts:" %></label>
+        <label class="fyi-info">(Don't include stocks or bonds held outside of tax-advantaged retirement accounts, we'll handle those later)</label>
+        <%= f.text_field :other_iras %>
+      </div>
+      <div class="navigation-buttons">
+        <input type="button" class="back-button" value="Back" onclick="history.back(-1)"></input>
+        <%= f.submit "Continue", class: "continue-button" %>
+      </div>
+    </div>
+  <% end %>
+</div>

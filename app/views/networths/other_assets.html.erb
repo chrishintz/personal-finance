@@ -1,0 +1,25 @@
+<div class="container">
+  <h2 class="question-text">Have We Forgotten Anything? Let's Wrap Up Any Loose Ends For Our Assets</h1>
+  <%= render :layout => 'form' do |f| %>
+    <div class="question-block">
+      <div>
+        <label class="input-label"><%= f.label :five_twenty_nine, "529 Plan:" %></label>
+        <div><%= f.text_field :five_twenty_nine %></div>
+      </div>
+      <div class="form-block">
+        <label class="input-label"><%= f.label :life_insurance, "Life Insurance:" %></label>
+        <label class="fyi-info">Enter only the cash surrender value of any life insurance policies.</label>
+        <%= f.text_field :life_insurance %>
+      </div>
+      <div class="form-block">
+        <label class="input-label"><%= f.label :other_investments, "All Other Investments:" %></label>
+        <label class="fyi-info">Uncommon Assets, Which Might Include: Trusts, Profit-Sharing Plans, Restricted Stock, Accounts/Notes Receivable, Business/Partnership Value (Enter the current fair market value of your portion of the ownership interest/equity in the business on this line (e.g., if your sole proprietorship is worth $40,000, this entire amount should be indicated))</label>
+        <%= f.text_field :other_investments %>
+      </div>
+      <div class="navigation-buttons">
+        <input type="button" class="back-button" value="Back" onclick="history.back(-1)"></input>
+        <%= f.submit "Continue", class: "continue-button" %>
+      </div>
+    </div>
+  <% end %>
+</div>

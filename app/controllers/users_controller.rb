@@ -15,16 +15,19 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       session[:user_id] = @user.id
       render_wizard @user
-    #   flash.now.alert = "Username or Email is already taken"
+      # flash.now.alert = "Username or Email is already taken"
   end
 
   private
     def user_params
       params.require(:user).permit( :username,
                                     :email,
-                                    :password,
-                                    :password_confirmation,
+                                    :password_digest,
                                     :first_name,
                                     :last_name)
+    end
+
+    def finish_wizard_path
+      networths_start_path
     end
 end

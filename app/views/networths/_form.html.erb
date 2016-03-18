@@ -1,0 +1,16 @@
+<%= form_for @net_worth, url: wizard_path, method: :put do |f| %>
+
+  <% if @net_worth.errors.any? %>
+    <div class="error_messages">
+      <h2><%= pluralize(@net_worth.errors.count, "error") %> prohibited this information from being saved:</h2>
+      <ul>
+      <% @net_worth.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%= yield f %>
+
+<% end %>

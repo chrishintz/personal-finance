@@ -1,0 +1,21 @@
+<div class="container">
+  <h2 class="question-text">Sometimes We Have to Take Out Loans or Other Liabilities To Purchase Assets. <br> Let's Keep Track Of Those Here!</h1>
+  <%= render :layout => 'form' do |f| %>
+    <div class="question-block">
+      <div>
+        <label class="input-label"><%= f.label :real_estate_mortgages, "Real Estate Mortgages:" %></label>
+        <label class="fyi-info">Enter the total value due on all mortgage(s) payable on Real Estate.</label>
+        <div><%= f.text_field :real_estate_mortgages %></div>
+      </div>
+      <div class="form-block">
+        <label class="input-label"><%= f.label :car_loans, "Car Loans:" %></label>
+        <label class="fyi-info">Enter amount of the current balance of all your auto loans.</label>
+        <%= f.text_field :car_loans %>
+      </div>
+      <div class="navigation-buttons">
+        <input type="button" class="back-button" value="Back" onclick="history.back(-1)"></input>
+        <%= f.submit "Continue", class: "continue-button" %>
+      </div>
+    </div>
+  <% end %>
+</div>

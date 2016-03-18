@@ -1,0 +1,26 @@
+<div class="container">
+  <h2 class="question-text">Let's Not Forget Anything! <br> Here We'll Put Any Remaining Liabilities To Track</h1>
+  <%= render :layout => 'form' do |f| %>
+    <div class="question-block">
+      <div>
+        <label class="input-label"><%= f.label :unpaid_taxes, "Unpaid Taxes:" %></label>
+        <label class="fyi-info">Enter the total amount of all taxes which are currently due but are unpaid. Contingent tax liabilities or anticipated taxes for the current year should not be included.</label>
+        <div><%= f.text_field :unpaid_taxes %></div>
+      </div>
+      <div class="form-block">
+        <label class="input-label"><%= f.label :money_owned_to_others, "Money Owed To Others:" %></label>
+        <label class="fyi-info">This includes any personal loans or money borrowed from friends, family, etc</label>
+        <%= f.text_field :money_owned_to_others %>
+      </div>
+      <div class="form-block">
+        <label class="input-label"><%= f.label :other_liabilities, "Other Liabilities:" %></label>
+        <label class="fyi-info">Enter the total value due on all other liabilities not classified in the previous sections</label>
+        <%= f.text_field :other_liabilities %>
+      </div>
+      <div class="navigation-buttons">
+        <input type="button" class="back-button" value="Back" onclick="history.back(-1)"></input>
+        <%= f.submit "Continue", class: "continue-button" %>
+      </div>
+    </div>
+  <% end %>
+</div>
