@@ -18,6 +18,10 @@ class UsersController < ApplicationController
       # flash.now.alert = "Username or Email is already taken"
   end
 
+  def dashboard
+    @user = User.find(session[:user_id])
+  end
+
   private
     def user_params
       params.require(:user).permit( :username,
