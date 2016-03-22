@@ -9,27 +9,33 @@
 <body>
   <header class="navigation" role="banner">
     <div class="navigation-wrapper">
-      <a href="javascript:void(0)" class="logo">
+      <a href="/" class="logo">
         <i class="fa fa-line-chart fa-5x"></i>
       </a>
       <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
       <nav role="navigation">
         <ul id="js-navigation-menu" class="navigation-menu show">
-          <li class="nav-link login">
-            <a class="login-trigger" href="#">Sign-in<span>&#x25BC;</span></a>
-            <div class="login-content">
-              <form>
-                <fieldset class="inputs">
-                  <input id="username" type="email" name="email" placeholder="Your email address">
-                  <input id="password" type="password" name="password" placeholder="Password">
-                </fieldset>
-                <fieldset class="actions">
-                  <input type="submit" id="submit" value="Log in">
-                  <label><input type="checkbox" checked="checked">Keep me signed in</label>
-                </fieldset>
-              </form>
-            </div>
-          </li>
+          <% if !@current_user %>
+            <li class="nav-link login">
+              <a class="login-trigger" href="#">Sign-in<span>&#x25BC;</span></a>
+              <div class="login-content">
+                <form action="/sign-in" method="POST">
+                  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+                  <fieldset class="inputs">
+                    <input id="username" type="email" name="email" placeholder="Your email address">
+                    <input id="password" type="password" name="password" placeholder="Password">
+                  </fieldset>
+                  <fieldset class="actions">
+                    <input type="submit" id="submit" value="Log in">
+                    <label><input type="checkbox" checked="checked">Keep me signed in</label>
+                  </fieldset>
+                </form>
+              </div>
+            </li>
+          <% end %>
+          <% if @current_user %>
+            <li class="nav-link"><a href="/dashboard/:id"> <%= "#{@current_user.first_name}'s Dashboard" %></a></li>
+          <% end %>
           <li class="nav-link"><a href="javascript:void(0)">About Us</a></li>
           <li class="nav-link"><a href="javascript:void(0)">Contact</a></li>
           <li class="nav-link more"><a href="javascript:void(0)">More</a>

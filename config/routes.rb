@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
   get "/", to: "users#index", as: :home
-  resources :users
-  get "/dashboard", to: "users#dashboard"
+  get "/dashboard/:id", to: "users#dashboard"
   get "/networths/intro", to: "networths#index", as: :networths_start
+  resources :users
   resources :networths
+
+  post   "/sign-in",                 to: "sessions#sign_in",      as: :sign_in
+
 end
