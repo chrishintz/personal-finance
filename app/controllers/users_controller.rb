@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   def dashboard
     # @users = User.all
     @user = User.find(session[:user_id])
-    @networths = NetWorth.all
+    # @networth = NetWorth.find_by user_id: @user.id
   end
 
   private

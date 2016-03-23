@@ -51,4 +51,8 @@ class NetworthsController < ApplicationController
                                       :other_liabilities
                                       )
   end
+
+  def finish_wizard_path
+    dashboard_path
+  end
 end

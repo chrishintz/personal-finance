@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   validates :email, :username, presence: true, if: :active?
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, if: :active?
   validates_uniqueness_of :email, :username, if: :active?
-  has_one :networth
+  has_one :net_worth
 
   def active?
     status == 'active'
