@@ -12,7 +12,14 @@ class NetworthsController < ApplicationController
   end
 
   def update
-    @net_worth = NetWorth.new(networth_params)
+    @user = User.find(session[:user_id])
+    @net_worth = NetWorth.find_or_create_by(user_id: @user.id)
+    if @net_worth.new_record?
+      @net_worth.user_id = @current_user.id
+      @net_worth.save
+    else
+      @net_worth.update(networth_params)
+    end
     render_wizard @net_worth
   end
 
