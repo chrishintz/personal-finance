@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
 <body>
   <header class="navigation" role="banner">
@@ -37,7 +38,7 @@
             <li class="nav-link"><a href="/dashboard/:id"> <%= "#{@current_user.first_name}'s Dashboard" %></a></li>
           <% end %>
           <li class="nav-link"><a href="javascript:void(0)">About Us</a></li>
-          <li class="nav-link"><a href="javascript:void(0)">Contact</a></li>
+          <li class="nav-link"><a href="mailto:chrishintz42@gmail.com">Contact</a></li>
           <li class="nav-link more"><a href="javascript:void(0)">More</a>
             <ul class="submenu">
               <li><a href="javascript:void(0)">Submenu Item</a></li>

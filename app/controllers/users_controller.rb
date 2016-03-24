@@ -32,9 +32,7 @@ class UsersController < ApplicationController
   end
 
   def dashboard
-    # @users = User.all
     @user = User.find(session[:user_id])
-    # @networth = NetWorth.find_by user_id: @user.id
   end
 
   private
