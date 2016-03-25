@@ -23,6 +23,26 @@ class NetworthsController < ApplicationController
     render_wizard @net_worth
   end
 
+  def assets
+    @user = User.find(session[:user_id])
+    @assets = @user.net_worth.sum_assets
+    render json: @assets
+  end
+
+  def liabilities
+    @user = User.find(session[:user_id])
+    @liabilities = @user.net_worth.sum_liabilities
+    render json: @liabilities
+  end
+
+  def networth_calc
+    @user = User.find(session[:user_id])
+    @assets = @user.net_worth.sum_assets
+    @liabilities = @user.net_worth.sum_liabilities
+    @networth = @assets + @liabilities
+    render json: @networth
+  end
+
   private
 
   def networth_params

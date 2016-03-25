@@ -12,4 +12,15 @@ class NetWorth < ActiveRecord::Base
     self.money_owned_to_others  = -money_owned_to_others.abs
     self.other_liabilities      = -other_liabilities.abs
   end
+
+  def sum_assets
+    checking_account + savings_account + four_o_one_k + roth_ira + other_iras +
+    other_iras + five_twenty_nine + stocks + bonds + other_investments + pension +
+    primary_residence + other_real_estate + car + life_insurance + other_assets
+  end
+
+  def sum_liabilities
+    real_estate_mortgages + student_loans + car_loans + credit_card_debt +
+    consumer_loans + unpaid_taxes + money_owned_to_others + other_liabilities
+  end
 end
