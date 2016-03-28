@@ -1,6 +1,5 @@
 <div class="hero">
 	<div class="hero-inner">
-    <!-- <a href="" class="hero-logo"><img src="https://s3-us-west-2.amazonaws.com/startup-app/1458872097_Bank.png" alt="Logo Image"></a> -->
 		<div class="hero-copy">
 			<h1>Trusted Financial Planning</h1>
 			<p>It shouldn't have to be expensive to get top financial planning advice.<br />
@@ -8,7 +7,12 @@
         planning advice and tracking tools to understand where you stand and what
         path to take next!</p>
 		</div>
-    <a href="<%= user_path :signup %>" class="wizard-begin-button">Get Started For Free Today</a>
+		<% if !@current_user %>
+    	<a href="<%= user_path :signup %>" class="wizard-begin-button">Get Started For Free Today</a>
+		<% end %>
+		<% if @current_user %>
+			<a href="<%= networth_path :bank %>" class="wizard-begin-button">Update or Continue Your Financial Profile</a>
+		<% end %>
 	</div>
 </div>
 <ul class="bullets">
