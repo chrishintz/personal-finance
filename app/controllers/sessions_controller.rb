@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-  def sign_out
+  def destroy
     session.delete(:user_id)
     redirect_to "/", notice: "You were signed out."
   end

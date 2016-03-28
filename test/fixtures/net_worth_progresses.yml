@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  assets: 1
+  liabilities: 1
+  networth: 1
+  date: 2016-03-27 15:30:29
+  user_id: 1
+
+two:
+  assets: 1
+  liabilities: 1
+  networth: 1
+  date: 2016-03-27 15:30:29
+  user_id: 1

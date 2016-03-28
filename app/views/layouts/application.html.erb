@@ -26,16 +26,19 @@
                     <input id="username" type="email" name="email" placeholder="Your email address">
                     <input id="password" type="password" name="password" placeholder="Password">
                   </fieldset>
-                  <fieldset class="actions">
-                    <input type="submit" id="submit" value="Log in">
-                    <label><input type="checkbox" checked="checked">Keep me signed in</label>
-                  </fieldset>
+                  <div class="center">
+                    <fieldset>
+                      <input type="submit" id="submit" value="Log in">
+                      <label><input type="checkbox" checked="checked">Keep me signed in</label>
+                    </fieldset>
+                  </div>
                 </form>
               </div>
             </li>
           <% end %>
           <% if @current_user %>
             <li class="nav-link"><a href="/dashboard/:id"> <%= "#{@current_user.first_name}'s Dashboard" %></a></li>
+            <li class="nav-link"><a href="/sign-out">Sign-Out</a></li>
           <% end %>
           <li class="nav-link"><a href="javascript:void(0)">About Us</a></li>
           <li class="nav-link"><a href="mailto:chrishintz42@gmail.com">Contact</a></li>

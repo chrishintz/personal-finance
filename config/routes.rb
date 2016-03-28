@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :users
   resources :networths
 
-  post   "/sign-in",                 to: "sessions#sign_in",      as: :sign_in
+  post   "/sign-in",      to: "sessions#sign_in",      as: :sign_in
+  get    "/sign-out",     to: "sessions#destroy",      as: :signout
+
 
 end
