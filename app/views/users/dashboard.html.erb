@@ -1,7 +1,7 @@
 <div class="container">
   <div class="networth-in-numbers">
     <ul>
-      <li class="list-networth"><h2>Networth: <h2 class="networth-color"><%= number_to_currency @user.net_worth.calc_networth, precision: 0, negative_format: "(%u%n)" %></h2></h2></li>
+      <li class="list-networth"><h2>Networth: <h2 class="<%= @user.net_worth.calc_networth < 0 ? "red" : "green" %>"> <%= number_to_currency @user.net_worth.calc_networth, precision: 0, negative_format: "(%u%n)" %></h2></h2></li>
       <li class="list-networth"><h2>Assets: <h2 class="green"><%= number_to_currency @user.net_worth.sum_assets, precision: 0 %></h2></h2></li>
       <li class="list-networth"><h2>Liabilities: <h2 class="red"><%= number_to_currency @user.net_worth.sum_liabilities, precision: 0, negative_format: "(%u%n)" %></h2></h2></li>
     </ul>
@@ -9,10 +9,61 @@
   </div>
   <div id="net-worth-chart">
   </div>
+  <div class="grid-items">
+    <a href="javascript:void(0)" class="grid-item">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="">
+      <h2>1) Invest in your 401(k) up until your employer match</h2>
+      <p>Lorem ipsum dolor sit amet, elit. Rem, illum.</p>
+    </a>
+    <a href="javascript:void(0)" class="grid-item">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png" alt="">
+      <h2>2) Pay down any high-interest (>6%) credit card debt</h2>
+      <p>Lorem ipsum dolor sit amet, elit. Rem, illum.</p>
+    </a>
+    <a href="javascript:void(0)" class="grid-item">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png" alt="">
+      <h2>3) Create an emergency fund with at least 3 months worth of expenses</h2>
+      <p>Lorem ipsum dolor sit amet, elit. Rem, illum.</p>
+    </a>
+    <a href="javascript:void(0)" class="grid-item">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3.png" alt="">
+      <h2>4) Fully fund a Roth IRA</h2>
+      <p>Lorem ipsum dolor sit amet, elit. Rem, illum.</p>
+    </a>
+    <a href="javascript:void(0)" class="grid-item">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="">
+      <h2>5) Make sure you have adequate insurance coverage</h2>
+      <p>Lorem ipsum dolor sit amet, elit. Rem, illum.</p>
+    </a>
+    <a href="javascript:void(0)" class="grid-item">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="">
+      <h2>6) Pay down any loans at higher interest rates than you could get at the bank</h2>
+      <p>Lorem ipsum dolor sit amet, elit. Rem, illum.</p>
+    </a>
+    <a href="javascript:void(0)" class="grid-item">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png" alt="">
+      <h2>7/8) Save towards a house down payment</h2>
+      <p>Lorem ipsum dolor sit amet, elit. Rem, illum.</p>
+    </a>
+    <a href="javascript:void(0)" class="grid-item">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png" alt="">
+      <h2>7/8) Continue to fund your 401(k) to the max</h2>
+      <p>Lorem ipsum dolor sit amet, elit. Rem, illum.</p>
+    </a>
+    <a href="javascript:void(0)" class="grid-item">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3.png" alt="">
+      <h2>9/10/11) Invest money in taxable accounts</h2>
+      <p>Lorem ipsum dolor sit amet, elit. Rem, illum.</p>
+    </a>
+    <a href="javascript:void(0)" class="grid-item">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="">
+      <h2>9/10/11) Pay down your mortgage</h2>
+      <p>Lorem ipsum dolor sit amet, elit. Rem, illum.</p>
+    </a>
+    <a href="javascript:void(0)" class="grid-item">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="">
+      <h2>9/10/11) Save for your children’s education</h2>
+      <p>Lorem ipsum dolor sit amet, elit. Rem, illum.</p>
+    </a>
+  </div>
 </div>
-  <p>
-    <%= @user.dob %><br />
-    <%= @user.first_name %><br />
-    <%= @user.last_name %><br />
-    <%= @user.net_worth.checking_account %><br />
-  </p>
