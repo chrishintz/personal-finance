@@ -1,54 +1,79 @@
 $(function () {
-  $.get("/assets", function(assets){
-    var assetArray = [];
-    var dateArray  = [];
-    for (i = 0; i < assets.length; i++) {
-      assetArray.push(assets[i].total);
-      // dateArray.push(assets[i]._id.dayOfMonth);
-    }
-
-  $.get("/liabilities", function(liabilities){
+  $.get("/data", function(data){
+    var assetArray       = [];
     var liabilitiesArray = [];
-    var monthArray   = [];
-    for (i = 0; i < liabilities.length; i++) {
-      liabilitiesArray.push(liabilities[i].total);
-      // dateArray.push(liabilities[i]._id.dayOfMonth);
+    var networthArray    = [];
+    var dateArray        = [];
+    for (i = 0; i < data.length; i++) {
+      assetArray.push(data[i].assets);
+      liabilitiesArray.push(data[i].liabilities);
+      networthArray.push(data[i].networth);
+      dateArray.push(data[i].created_at);
     }
-
-    $.get("/networth-calc", function(networth){
-      var networthArray = [];
-      var monthArray   = [];
-      for (i = 0; i < networth.length; i++) {
-        networthArray.push(networth[i].total);
-        // dateArray.push(networth[i]._id.dayOfMonth);
-      }
 
     $('#net-worth-chart').highcharts({
         chart: {
-            type: 'area'
+            backgroundColor: {
+              linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
+              stops: [
+                 [0, '#2a2a2b'],
+                 [1, '#3e3e40']
+              ]
+            },
+          type: 'area'
         },
         title: {
-            text: 'Net Worth'
+            text: 'Net Worth',
+            style: {
+             color: '#E0E0E3',
+             textTransform: 'uppercase',
+             fontSize: '20px'
+          }
         },
-        // xAxis: {
-        //   // name: 'Date',
-        //   // categories: dateArray
-        // },
+        xAxis: {
+          name: 'Date',
+          categories: dateArray,
+          labels: {
+            style: {
+            color: '#E0E0E3'
+            }
+          },
+        },
+        yAxis: {
+           gridLineColor: '#707073',
+           labels: {
+              style: {
+                 color: '#E0E0E3'
+              }
+           },
+         },
+       legend: {
+          itemStyle: {
+             color: '#E0E0E3'
+          },
+          itemHoverStyle: {
+             color: '#FFF'
+          },
+          itemHiddenStyle: {
+             color: '#606063'
+          }
+        },
         credits: {
             enabled: false
         },
         series: [{
             name: 'Assets',
-            data: assetArray
+            data: assetArray,
+            color: '#2BA84A'
         }, {
             name: 'Liabilities',
-            data: liabilitiesArray
+            data: liabilitiesArray,
+            color: '#D90429'
         }, {
             name: 'Net Worth',
-            data: networthArray
+            data: networthArray,
+            color: '#C0C0C0'
         }]
     });
-  });
-  });
   });
 });

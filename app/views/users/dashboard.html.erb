@@ -1,6 +1,13 @@
 <div class="container">
-  <div id="net-worth-chart">
+  <div class="networth-in-numbers">
+    <ul>
+      <li class="list-networth"><h2>Networth: <h2 class="networth-color"><%= number_to_currency @user.net_worth.calc_networth, precision: 0, negative_format: "(%u%n)" %></h2></h2></li>
+      <li class="list-networth"><h2>Assets: <h2 class="green"><%= number_to_currency @user.net_worth.sum_assets, precision: 0 %></h2></h2></li>
+      <li class="list-networth"><h2>Liabilities: <h2 class="red"><%= number_to_currency @user.net_worth.sum_liabilities, precision: 0, negative_format: "(%u%n)" %></h2></h2></li>
+    </ul>
 
+  </div>
+  <div id="net-worth-chart">
   </div>
 </div>
   <p>

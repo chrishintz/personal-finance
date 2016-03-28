@@ -35,6 +35,15 @@ class UsersController < ApplicationController
     @user = User.find(session[:user_id])
   end
 
+  def data
+    @user = User.find(session[:user_id])
+    @networth = @user.net_worth_progresses
+    @networths = @networth.group_by do |user|
+      user.user_id
+    end
+    render json: @networths[@user.id]
+  end
+
   private
     def user_params
       params.require(:user).permit( :username,
