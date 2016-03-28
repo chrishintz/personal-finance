@@ -37,9 +37,7 @@ class NetworthsController < ApplicationController
 
   def networth_calc
     @user = User.find(session[:user_id])
-    @assets = @user.net_worth.sum_assets
-    @liabilities = @user.net_worth.sum_liabilities
-    @networth = @assets + @liabilities
+    @networth = @user.net_worth.calc_networth
     render json: @networth
   end
 
