@@ -1,12 +1,39 @@
 <div class="container">
-  <div class="networth-in-numbers">
+  <!-- <div class="networth-in-numbers">
     <ul>
       <li class="list-networth"><h2>Networth: <h2 class="<%= @user.net_worth.calc_networth < 0 ? "red" : "green" %>"> <%= number_to_currency @user.net_worth.calc_networth, precision: 0, negative_format: "(%u%n)" %></h2></h2></li>
       <li class="list-networth"><h2>Assets: <h2 class="green"><%= number_to_currency @user.net_worth.sum_assets, precision: 0 %></h2></h2></li>
       <li class="list-networth"><h2>Liabilities: <h2 class="red"><%= number_to_currency @user.net_worth.sum_liabilities, precision: 0, negative_format: "(%u%n)" %></h2></h2></li>
+    </ul> -->
+    <ul class="bullets">
+      <li class="bullet-point">
+        <div class="bullet-iconic bullet-icon-4">
+          <img src="<%= @user.net_worth.calc_networth > 0 ? "https://s3-us-west-2.amazonaws.com/startup-app/Icons/ic_mood_white_48dp_1x.png" : "https://s3-us-west-2.amazonaws.com/startup-app/Icons/ic_mood_bad_white_48dp_1x.png" %> " alt="">
+        </div>
+        <div class="bullet-content">
+          <h2>Net Worth</h2>
+          <h3 class="<%= @user.net_worth.calc_networth < 0 ? "red" : "green" %>"> <%= number_to_currency @user.net_worth.calc_networth, precision: 0, negative_format: "(%u%n)" %></h3>
+        </div>
+      </li>
+      <li class="bullet-point">
+        <div class="bullet-iconic bullet-icon-5">
+          <img src="https://s3-us-west-2.amazonaws.com/startup-app/Icons/ic_domain_white_48dp_1x.png" alt="">
+        </div>
+        <div class="bullet-content">
+          <h2>Assets</h2>
+          <h3 class="green"><%= number_to_currency @user.net_worth.sum_assets, precision: 0 %></h3>
+        </div>
+      </li>
+      <li class="bullet-point">
+        <div class="bullet-iconic bullet-icon-6">
+          <img src="https://s3-us-west-2.amazonaws.com/startup-app/Icons/ic_card_travel_white_48dp_1x.png" alt="">
+        </div>
+        <div class="bullet-content">
+          <h2>Liabilities</h2>
+          <h3 class="red"><%= number_to_currency @user.net_worth.sum_liabilities, precision: 0, negative_format: "(%u%n)" %></h3>
+        </div>
+      </li>
     </ul>
-
-  </div>
   <div id="net-worth-chart">
   </div>
   <div class="grid-items">
