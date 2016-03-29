@@ -5,12 +5,12 @@
       <div>
         <label class="input-label"><%= f.label :stocks, "Stocks:" %></label>
         <label class="fyi-info">Held Outside of Retirement Accounts</label>
-        <div><%= f.text_field :stocks %></div>
+        <div><%= f.text_field :stocks, :value => @current_user.net_worth.stocks %></div>
       </div>
       <div class="form-block">
         <label class="input-label"><%= f.label :bonds, "Bonds:" %></label>
         <label class="fyi-info">Held Outside of Retirement Accounts</label>
-        <%= f.text_field :bonds %>
+        <%= f.text_field :bonds, :value => @current_user.net_worth.bonds %>
       </div>
       <div class="navigation-buttons">
         <input type="button" class="back-button" value="Back" onclick="history.back(-1)"></input>

@@ -4,21 +4,21 @@
     <div class="question-block">
       <div>
         <label class="input-label"><%= f.label :four_o_one_k, "401(k) and/or 403(b):" %></label>
-        <div><%= f.text_field :four_o_one_k %></div>
+        <div><%= f.text_field :four_o_one_k, :value => @current_user.net_worth.four_o_one_k %></div>
       </div>
       <div class="form-block">
         <label class="input-label"><%= f.label :roth_ira, "Roth IRA:" %></label>
-        <%= f.text_field :roth_ira %>
+        <%= f.text_field :roth_ira, :value => @current_user.net_worth.roth_ira %>
       </div>
       <div class="form-block">
         <label class="input-label"><%= f.label :pension, "Pension:" %></label>
         <label class="fyi-info">(Enter current monthly benefit * 240)</label>
-        <%= f.text_field :pension %>
+        <%= f.text_field :pension, :value => @current_user.net_worth.pension %>
       </div>
       <div class="form-block">
         <label class="input-label"><%= f.label :other_iras, "Any Other Retirement Accounts:" %></label>
         <label class="fyi-info">(Don't include stocks or bonds held outside of tax-advantaged retirement accounts, we'll handle those later)</label>
-        <%= f.text_field :other_iras %>
+        <%= f.text_field :other_iras, :value => @current_user.net_worth.other_iras %>
       </div>
       <div class="navigation-buttons">
         <input type="button" class="back-button" value="Back" onclick="history.back(-1)"></input>

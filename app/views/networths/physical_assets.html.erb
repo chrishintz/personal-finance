@@ -5,17 +5,17 @@
       <div>
         <label class="input-label"><%= f.label :primary_residence, "Did You Buy Your House? If so, What is the Value of Your House?:" %></label>
         <label class="fyi-info">If you bought it in the last year, use the purchase price, otherwise estimate the price using (Zillow/Redfin or similar).  We recommend being conservative with this value.</label>
-        <div><%= f.text_field :primary_residence %></div>
+        <div><%= f.text_field :primary_residence, :value => @current_user.net_worth.primary_residence %></div>
       </div>
       <div class="form-block">
         <label class="input-label"><%= f.label :other_real_estate, "Do You Own Any Rental, Investment, or Vacation Properties?  If so, What Are Their Combined Values?:" %></label>
         <label class="fyi-info">If you bought it in the last year, use the purchase price, otherwise estimate the price using (Zillow/Redfin or similar).  We recommend being conservative with this value.</label>
-        <%= f.text_field :other_real_estate %>
+        <%= f.text_field :other_real_estate, :value => @current_user.net_worth.other_real_estate %>
       </div>
       <div class="form-block">
         <label class="input-label"><%= f.label :car, "What is the Value of Your Car(s)?:" %></label>
         <label class="fyi-info">Estimate the price using (Kelly Blue Book, kbb.com).  We recommend being conservative with this value.</label>
-        <%= f.text_field :car %>
+        <%= f.text_field :car, :value => @current_user.net_worth.car %>
       </div>
       <div class="navigation-buttons">
         <input type="button" class="back-button" value="Back" onclick="history.back(-1)"></input>

@@ -5,17 +5,17 @@
       <div>
         <label class="input-label"><%= f.label :credit_card_debt, "Credit Card Debt:" %></label>
         <label class="fyi-info">Include the balances of all credit card debts</label>
-        <div><%= f.text_field :credit_card_debt %></div>
+        <div><%= f.text_field :credit_card_debt, :value => @current_user.net_worth.credit_card_debt %></div>
       </div>
       <div class="form-block">
         <label class="input-label"><%= f.label :student_loans, "Student Loans:" %></label>
         <label class="fyi-info">Enter amount of the current balance of all your student loans.</label>
-        <%= f.text_field :student_loans %>
+        <%= f.text_field :student_loans, :value => @current_user.net_worth.student_loans %>
       </div>
       <div class="form-block">
         <label class="input-label"><%= f.label :consumer_loans, "Consumer Loans:" %></label>
         <label class="fyi-info">Enter the total amount due on all loans from Banks and others.</label>
-        <%= f.text_field :consumer_loans %>
+        <%= f.text_field :consumer_loans, :value => @current_user.net_worth.consumer_loans %>
       </div>
       <div class="navigation-buttons">
         <input type="button" class="back-button" value="Back" onclick="history.back(-1)"></input>
