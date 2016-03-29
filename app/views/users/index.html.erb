@@ -11,7 +11,30 @@
     	<a href="<%= user_path :signup %>" class="wizard-begin-button">Get Started For Free Today</a>
 		<% end %>
 		<% if @current_user %>
-			<a href="<%= networth_path :bank %>" class="wizard-begin-button">Update or Continue Your Financial Profile</a>
+		<div class="center">
+		  <button type="button" class="js-menu-trigger sliding-panel-button orange">
+		    Update Profile or Accounts
+		  </button>
+			</div>
+			<nav class="js-menu sliding-panel-content">
+			  <ul>
+			    <li><a href="javascript:void(0)"><strong>Profile</strong></a></li>
+			    <li><a class="non-heading" href="/user/biographical">Biographical</a></li>
+			    <li><a class="non-heading" href="/user/spouse">Spousal Information</a></li>
+			    <li><a class="non-heading" href="/user/other">Other</a></li>
+			    <li><a href="javascript:void(0)"></a></li>
+			    <li><a href="javascript:void(0)"><strong>Accounts</strong></a></li>
+			    <li><a class="non-heading" href="/networths/bank">Checking/Savings</a></li>
+			    <li><a class="non-heading" href="/networths/retirement">Retirement Accounts</a></li>
+			    <li><a class="non-heading" href="/networths/equities">Stocks & Bonds</a></li>
+			    <li><a class="non-heading" href="/networths/physical_assets">Real Estate/Auto</a></li>
+			    <li><a class="non-heading" href="/networths/other_assets">Other Assets</a></li>
+			    <li><a class="non-heading" href="/networths/physical_liabilities">Real Estate/Auto Loans</a></li>
+			    <li><a class="non-heading" href="/networths/installment_debt">Credit Card/Student Loans/Consumer Loans</a></li>
+			    <li><a class="non-heading" href="/networths/other_liabilities">Other Liabilities</a></li>
+			  </ul>
+			</nav>
+			<div class="js-menu-screen sliding-panel-fade-screen"></div>
 		<% end %>
 	</div>
 </div>

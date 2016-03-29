@@ -1,10 +1,6 @@
 // Place all the styles related to the Dashboards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#net-worth-chart {
-  margin-bottom: 40px;
-}
-
 .networth-in-numbers {
   display: block;
   text-align: center;
@@ -22,6 +18,18 @@
 
 .red {
   color: red;
+}
+
+.dashboard-header {
+  font-size: 3em;
+  display: block;
+  border-bottom: 3px solid black;
+}
+
+.financial-plan-header {
+  display: block;
+  border-bottom: 3px solid black;
+  font-size: 2.5em;
 }
 
 .bullets {
@@ -103,6 +111,12 @@
   $grid-item-background: desaturate($action-color, 30%);
   $grid-item-colors:
     desaturate($action-color, 30%),
+    #3581A5,
+    #5FBEBE,
+    #98C79A,
+    #A7A891,
+    #BDCC97,
+    #979EA0,
     #3581A5,
     #5FBEBE,
     #98C79A,
@@ -193,13 +207,5 @@
         max-width: 60%;
       }
     }
-  }
-
-  .grid-item-image {
-    background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png");
-    background-color: $grid-item-background;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 }
