@@ -4,7 +4,7 @@
     <div class="question-block">
       <div>
         <label class="input-label"><%= f.label :other_income, "Do you have any other income that we should take into account for your financial profile?:" %></label>
-        <div class="dob"><%= f.text_field :other_income %></div>
+        <div class="dob"><%= f.text_field :other_income, :value => @current_user.other_income %></div>
       </div>
       <div class="navigation-buttons">
         <input type="button" class="back-button" value="Back" onclick="history.back(-1)"></input>

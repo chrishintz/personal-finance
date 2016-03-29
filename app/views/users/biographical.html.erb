@@ -4,7 +4,7 @@
     <div class="question-block">
       <div>
         <label class="input-label"><%= f.label :dob, "Date of Birth:" %></label>
-        <div class="dob"><%= f.date_select :dob, order: [:month, :day, :year], start_year: 1919, end_year: Date.today.year %></div>
+        <div class="dob"><%= f.date_select :dob, :value => @current_user.dob, order: [:month, :day, :year], start_year: 1919, end_year: Date.today.year %></div>
       </div>
       <div class="form-block">
         <label class="input-label"><%= f.label :married, "What is your maritial status?:" %></label>
@@ -12,7 +12,7 @@
       </div>
       <div>
         <label class="input-label"><%= f.label :income, "What is your current annual income?:" %></label>
-        <span class="input-response"><%= f.text_field :income %></span>
+        <span class="input-response"><%= f.text_field :income, :value => @current_user.income %></span>
       </div>
       <div class="navigation-buttons">
         <input type="button" class="back-button" value="Back" onclick="history.back(-1)"></input>

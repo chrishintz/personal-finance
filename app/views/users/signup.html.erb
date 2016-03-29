@@ -4,19 +4,19 @@
     <div class="question-block">
       <div>
         <label class="input-label"><%= f.label :first_name, "First Name:" %></label>
-        <span class="input-response"><%= f.text_field :first_name %></span>
+        <span class="input-response"><%= f.text_field :first_name, :value => @current_user.first_name %></span>
       </div>
       <div>
         <label class="input-label"><%= f.label :last_name, "Last Name:" %></label>
-        <span class="input-response"><%= f.text_field :last_name %></span>
+        <span class="input-response"><%= f.text_field :last_name, :value => @current_user.last_name %></span>
       </div>
       <div>
         <label class="input-label"><%= f.label :email, "E-mail Address:" %></label>
-        <span class="input-response"><%= f.text_field :email %></span>
+        <span class="input-response"><%= f.text_field :email, :value => @current_user.email %></span>
       </div>
       <div>
         <label class="input-label"><%= f.label :username, "Username:" %></label>
-        <span class="input-response"><%= f.text_field :username %></span>
+        <span class="input-response"><%= f.text_field :username, :value => @current_user.username %></span>
       </div>
       <div>
         <label class="input-label"><%= f.label :password, "Password:" %></label>
