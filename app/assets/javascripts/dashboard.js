@@ -15,7 +15,7 @@ $(function () {
       assetArray.push(data[i].assets);
       liabilitiesArray.push(data[i].liabilities);
       networthArray.push(data[i].networth);
-      dateArray.push(data[i].created_at);
+      dateArray.push(moment(data[i].created_at.format("MM-DD-YYYY")));
     }
 
     $('#net-worth-chart').highcharts({

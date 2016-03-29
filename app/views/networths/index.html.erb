@@ -1,6 +1,10 @@
 <div class="container">
   <h2 class="question-text">Next Up, We Need To Enter Your Current Account Balances To Make Appropriate Recommendations For You!</h1>
   <div class="center">
-    <a href="<%= networth_path :bank %>" class="wizard-begin-button">Let's Get This Party Started!</a>    
+    <a href="<%= networth_path :bank %>" class="wizard-begin-button">Let's Get This Party Started!</a>
+  </div>
+  <div class="center">
+    <%= render :layout => 'sidebar' do |f| %>
+    <% end %>
   </div>
 </div>

@@ -21,6 +21,10 @@
         <input type="button" class="back-button" value="Back" onclick="history.back(-1)"></input>
         <%= f.submit "Continue", class: "continue-button" %>
       </div>
+      <div class="center">
+        <%= render :layout => 'sidebar' do |f| %>
+        <% end %>
+      </div>
     </div>
   <% end %>
 </div>
