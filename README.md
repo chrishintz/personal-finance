@@ -5,4 +5,4 @@
 - Built with Ruby-on-Rails, Bourbon/CSS, JavaScript, Postgresql, JSON, and Highcharts
 
 ## Homepage
-![ScreenShot](nextstepsfrontpage.png)
+![ScreenShot](https://s3-us-west-2.amazonaws.com/startup-app/nextstepsfrontpage.png)
